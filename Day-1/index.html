@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dev{
+            background-color: red;
+        }
+        .span{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- tags and ele -->
+    <p>para</p>
+
+    <!-- semantic ele -->
+    <header>Website</header>
+    <nav>Navbar</nav>
+
+
+     <!-- difference div and span -->
+    <div class="dev">this is a div</div>
+    <span class="span">This is a span</span>
+
+
+    <ol type="A">
+        <li>Wake up</li>
+        <li>Brush teeth</li>
+        <li>BreakFast</li>
+    </ol>
+
+
+    <ul type="square">
+        <li>Rice</li>
+        <li>Wheat</li>
+        <li>Pulses</li>
+    </ul>
+
+    
+</body>
+</html>
+
+<script>
+    // localStorage and sessionStorage
+
+    localStorage.setItem("city", "Delhi")
+    let userCity = localStorage.getItem("city")
+    localStorage.removeItem("city")
+
+    sessionStorage.setItem("name", "shiva")
+    let userName = sessionStorage.getItem("name")
+    sessionStorage.removeItem("name")
+</script>

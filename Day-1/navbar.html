@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f4;
+}
+.navbar{
+    background-color: #e6ebf7;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+}
+.nav-link{
+    display:flex;
+    list-style: none;
+    gap:30px;
+}
+.nav-link li a{
+    text-decoration: none;
+    color:#111827;
+    font-weight: 500;
+}
+.nav-link li a:hover{
+    color:red;
+}
+.logo{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color:rgb(73, 7, 73)
+    
+}
+.humburger{
+    cursor:pointer;
+}
+.humburger img{
+    width:20%;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: -300px;
+    background: #111827;
+    width: 200px;
+    height: 100vh;
+    padding-top: 30px;
+    transition: right 0.4s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i>MY WEBSITE</i></div>
+
+        <ul class="nav-link" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="humburger">
+            <img src="https://cdn-icons-png.flaticon.com/128/6015/6015685.png" alt="">
+        </div>
+    </nav>
+</body>
+</html>
+
+<script>
+    const humburger = document.getElementById("humburger")
+    const navLinks = document.getElementById("navLinks")
+
+    humburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active")
+    })
+</script>
