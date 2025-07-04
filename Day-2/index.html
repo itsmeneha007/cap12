@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            background-color: aliceblue;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin:0;
+            min-height: 100vh;
+        }
+        .card{
+            width:350px;
+            background-color: rgb(245, 241, 241);
+            border:1px solid grey;
+            border-radius: 10px;
+            box-shadow: black;
+            overflow: hidden;
+        }
+        .card-image{
+            width:100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-content{
+            padding:15px;
+        }
+        .card-title{
+            font-size: 2rem;
+            color: brown;
+        }
+        .card-btn{
+            padding:10px 20px;
+            border-radius: 10px;
+            background-color: black;
+            color:white;
+            text-decoration: none;
+        
+        }
+        .card-btn:hover{
+            color:black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2023/12/26/11/46/cake-8470012_1280.jpg" alt="card image" class="card-image">
+        <div class="card-content">
+
+            <h2 class="card-title">Website</h2>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa dolorem necessitatibus eos exercitationem quae cupiditate minima et velit. Inventore, velit!</p>
+            <a href="#" class="card-btn">Read More</a>
+        </div>
+    </div>
+</body>
+</html>
