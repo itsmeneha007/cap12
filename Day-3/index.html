@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --heading-color: rgb(35, 194, 35);
+            --main-color:rgb(38, 25, 0);
+            --maxw:300px;
+        }
+        body{
+            font-family: sans-serif;
+            padding:20px;
+            color:var(--heading-color);
+            background-color: var(--main-color);
+            transition: background-color 0.4s, color 0.4s ease;
+        }
+        h1::after{
+            content:" properties";
+            color:blueviolet
+        }
+        p{
+            animation:fadeSlide 3s ease;
+        }
+        @keyframes fadeSlide {
+            from{
+                opacity:0;
+                transform: translateX(-20px)
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0)
+            }
+        }
+        button{
+            padding:10px 20px;
+            border:none;
+            border-radius: 5px;
+            font-size: 20px;
+            transition:background-color 0.4s ease
+        }
+        button:hover{
+            color:white;
+            background-color:var(--heading-color) ;
+        }
+    </style>
+</head>
+<body>
+    <h1>Runtime changes via JavaScript in css custom</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In beatae eveniet delectus minima inventore, quae incidunt culpa similique minus perferendis!</p>
+    <button onclick="changeTheme()">Theme</button>
+
+    <script>
+        
+
+        let dark = false;
+function changeTheme() {
+  const root = document.documentElement;
+  if (!dark) {
+    root.style.setProperty("--main-color", "#111");
+    root.style.setProperty("--heading-color", "#00ffcc");
+  } else {
+    root.style.setProperty("--main-color", "rgb(38, 25, 0)");
+    root.style.setProperty("--heading-color", "rgb(35, 194, 35)");
+  }
+  dark = !dark;
+}
+
+    </script>
+</body>
+</html>
