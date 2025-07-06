@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    // Event loop
+
+    setTimeout(function time(){
+        console.log("Where are you?")
+    }, 2000)
+    console.log("hello")
+    setTimeout(function timeout(){
+        console.log("I am here.")
+    })
+    console.log("Hello, Jhon")
+
+    /// Question-1
+
+    function anagrams(str1, str2){
+        if(str1.length !== str2.length){
+            return false;
+        }
+
+        const sortedStr1 = str1.split("").sort().join("");
+        const sortedStr2 = str2.split("").sort().join("");
+
+        return sortedStr1 === sortedStr2
+
+    }
+
+    console.log(anagrams("listen", "silent"))
+
+
+    ///question-2
+
+    function getCommonElement(arr1, arr2){
+        return arr1.filter(element => arr2.includes(element));
+    }
+    console.log(getCommonElement([1, 2, 3, 4], [3, 4, 5, 6]))
+</script>
