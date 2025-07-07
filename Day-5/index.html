@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // Promises
+
+    let myPromise = new Promise(function(resolve, reject){
+        let workComplete = true;
+        if(workComplete){
+            resolve("Work success")
+        }else{
+            reject("Some error in wrok")
+        }
+    })
+    myPromise
+    .then(result => {
+        console.log("1st then: ", result)
+        return "preparing for next task"
+    })
+    .then(nextWork => {
+        console.log("2nd then: ", nextWork)
+    })
+    .catch(error => {
+        console.log("Error: ", error)
+    })
+    .finally(() => {
+        console.log("Work completed")
+    })
+
+
+    //prototypal inheritance
+
+    let human = {
+        spacies: "Homo sapiens",
+        walk(){
+            console.log("I can walk")
+        },
+        speak(){
+            console.log("I can speak")
+        }
+    }
+
+    let teacher = Object.create(human)
+    teacher.subject = "Math";
+    teacher.teach = function(){
+        console.log("I teach " + " " + this.subject)
+    }
+
+    console.log(teacher.spacies);
+    teacher.walk();
+    teacher.speak();
+    teacher.teach();
+
+
+    // closure function
+
+    function outer(){
+        let count = 0;
+        return function(){
+            count++;
+            console.log(count)
+        }
+    }
+    let counter = outer();
+    counter();
+    counter();
+    counter();
+
+
+
+    ///   promise.all()
+
+    let p1 = new Promise(resolve => setTimeout(() => resolve("Apple🍎"), 2000))
+    let p2 = new Promise(resolve=> setTimeout(() => resolve("Banana🍌"), 1500))
+    let p3 = new Promise(resolve => setTimeout(() => resolve("Orange🍊"), 1000))
+
+
+    Promise.all([p1, p2, p3])
+    .then(fruits => {
+        console.log("List of fruits", fruits)
+    })
+    .catch(error => {
+        console.log("I think one fruit is missing", error)
+    })
+
+
+
+</script>
